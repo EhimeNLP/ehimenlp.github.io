@@ -1,6 +1,10 @@
 <template>
     <div>
-        <p>Some default layout content shared across all pages</p>
+        <LabHeader />
         <slot />
     </div>
 </template>
+
+<script setup lang="ts">
+import LabHeader from '~/components/LabHeader.vue';
+</script>
