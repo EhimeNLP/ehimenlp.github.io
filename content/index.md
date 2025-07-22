@@ -1,12 +1,2 @@
-# My First Page
-## test
-### マークダウン
+## お知らせ
 
-```python
-print("hello world")
-```
-
-hello world
-
-- 箇条書き
-    - ですよ

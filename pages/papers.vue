@@ -1,8 +1,9 @@
 <template>
     <div>
-        <h1 class="text-2xl font-bold">論文リスト</h1>
+        <MainContent />
     </div>
 </template>
 
 <script setup lang="ts">
+import MainContent from '~/components/MainContent.vue';
 </script>
