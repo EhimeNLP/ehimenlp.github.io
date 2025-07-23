@@ -14,7 +14,7 @@ if (fs.existsSync(papersDir)) {
     fs.mkdirSync(papersDir, { recursive: true });
 }
 
-fs.createReadStream('content/papers/international_papers.csv')
+fs.createReadStream('content/international_papers.csv')
     .pipe(csv())
     .on('data', (row) => {
         console.log('🔍 1行読み込み:', row);
