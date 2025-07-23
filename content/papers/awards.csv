@@ -1,0 +1,3 @@
+department,award_name,award_link,date,members,only_first_author,title
+言語処理学会 第19回若手シンポジウム,スポンサー賞,example.com,2024/09,花房健太郎:柳本大輝:梶原智之:二宮崇,True,大規模言語モデルによる11種類の日本語スタイル変換の性能評価
+言語処理学会 第30回年次大会,若手奨励賞,https://www.anlp.jp/nlp2024/award.html,2024/05,堀口航輝:梶原智之:荒瀬由紀:二宮崇,True,日本語医療テキスト平易化の評価用データセットの構築
