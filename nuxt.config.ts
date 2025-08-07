@@ -16,5 +16,13 @@ export default defineNuxtConfig({
   css: [
     '@/assets/css/main.css',
   ],
-  watch: ['content/**/*.yaml']
+  watch: ['content/**/*.yaml'],
+  content: {
+    build: {
+      csv: {
+        json: true,
+        delimiter: ',',
+      }
+    }
+  },
 })

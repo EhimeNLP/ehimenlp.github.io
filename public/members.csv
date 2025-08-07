@@ -1,0 +1,7 @@
+name, role, link, image_name, type
+愛媛 太郎, 教授, https://example.com, default.png, 現役
+松山 まどんな, M2, https://example.com, default.png, 現役
+松山 花子, M2, https://example.com, default.png, 現役
+海外 ひろし, , https://example.com, default.png, 短期留学生
+プロ Eさん, ,, default.png, プロジェクトE
+卒業 したろう, , https://example.com, default.png, 2012年卒業

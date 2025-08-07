@@ -73,6 +73,6 @@ export default defineContentConfig({
                 code_link: z.string().optional(),
                 data_link: z.string().optional()
             })
-        })
+        }),
     }
 })
