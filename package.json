@@ -8,8 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "generate-awards": "node util/award-csv-parser.js",
-    "generate-ipapers": "node util/international-paper-csv-parser.js"
+    "gen-archive": "node util/archivements-csv-parser.js"
   },
   "dependencies": {
     "@nuxt/content": "^3.6.0",
@@ -24,8 +23,13 @@
     "better-sqlite3": "^11.10.0",
     "csv-parser": "^3.2.0",
     "eslint": "^9.29.0",
+    "markdown-it": "^14.1.0",
     "nuxt": "^3.17.5",
     "vue": "^3.5.16",
     "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.1.2",
+    "csv-parse": "^6.1.0"
   }
 }

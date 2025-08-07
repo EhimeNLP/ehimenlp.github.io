@@ -16,26 +16,59 @@ export default defineContentConfig({
         }),
         awards: defineCollection({
             type: 'data',
-            source: 'papers/awards/*.yaml',
+            source: 'achivements/awards/*.yaml',
             schema: z.object({
-                department: z.string(),
-                award_name: z.string(),
-                award_link: z.string().optional(),
+                text_md: z.string(),
+                tags: z.array(z.string()),
                 date: z.date(),
-                members: z.array(z.string()),
-                only_first_author: z.boolean(),
-                title: z.string()
+                pdf_link: z.string().optional(),
+                code_link: z.string().optional(),
+                data_link: z.string().optional()
+            })
+        }),
+        papers: defineCollection({
+            type: 'data',
+            source: 'achivements/papers/*.yaml',
+            schema: z.object({
+                text_md: z.string(),
+                tags: z.array(z.string()),
+                date: z.date(),
+                pdf_link: z.string().optional(),
+                code_link: z.string().optional(),
+                data_link: z.string().optional()
+            })
+        }),
+        journals: defineCollection({
+            type: 'data',
+            source: 'achivements/journals/*.yaml',
+            schema: z.object({
+                text_md: z.string(),
+                tags: z.array(z.string()),
+                date: z.date(),
+                pdf_link: z.string().optional(),
+                code_link: z.string().optional(),
+                data_link: z.string().optional()
             })
         }),
         international_papers: defineCollection({
             type: 'data',
-            source: 'papers/international_papers/*.yaml',
+            source: 'achivements/international_papers/*.yaml',
             schema: z.object({
-                members: z.array(z.string()),
-                title: z.string(),
+                text_md: z.string(),
                 tags: z.array(z.string()),
                 date: z.date(),
-                info: z.string(),
+                pdf_link: z.string().optional(),
+                code_link: z.string().optional(),
+                data_link: z.string().optional()
+            })
+        }),
+        others: defineCollection({
+            type: 'data',
+            source: 'achivements/others/*.yaml',
+            schema: z.object({
+                text_md: z.string(),
+                tags: z.array(z.string()),
+                date: z.date(),
                 pdf_link: z.string().optional(),
                 code_link: z.string().optional(),
                 data_link: z.string().optional()

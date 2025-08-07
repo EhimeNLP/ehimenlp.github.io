@@ -26,18 +26,9 @@
         <template v-for="(paper, index) in filteredPapers" :key="paper.id">
             <div class="mb-4">
                 <span class="mr-2">{{ index + 1 }}.</span>
-                
-                <!-- 著者リスト -->
-                <template v-for="(member, memberIndex) in paper.members" :key="member">
-                    <span>{{ member }}</span>
-                    <span v-if="memberIndex < paper.members.length - 1">, </span>
-                </template>
 
-                <!-- タイトル -->
-                <span class="ml-2 font-semibold">{{ paper.title }}</span>
-
-                <!-- 発表情報 -->
-                <span class="ml-2">{{ paper.info }}</span>
+                <!-- eslint-disable-next-line vue/no-v-html -->
+                <div class="prose inline" v-html="renderMarkdown(paper.text_md)" />
 
                 <!-- リンク（PDFがある場合） -->
                 <template v-if="paper.pdf_link && paper.pdf_link !== ''">
@@ -45,9 +36,7 @@
                         :href="paper.pdf_link" 
                         target="_blank" 
                         class="text-blue-600 hover:text-blue-800 underline ml-2"
-                    >
-                        [PDF]
-                    </a>
+                    >[PDF]</a>
                 </template>
 
                 <!-- コードリンク -->
@@ -77,7 +66,22 @@
 </template>
 
 <script setup lang="ts">
-const { data: papers } = await useAsyncData("paper", () => queryCollection('international_papers').all())
+import MarkdownIt from 'markdown-it'
+
+const props = defineProps<{
+    type: 'papers' | 'journals' | 'international_papers' | 'awards' | 'others'
+}>();
+
+// markdown-itインスタンスを作成
+const md = new MarkdownIt()
+
+// Markdownテキストをレンダリングする関数
+const renderMarkdown = (text: string): string => {
+    // インラインレンダリングを使用してpタグを避ける
+    return md.renderInline(text || '')
+}
+
+const { data: papers } = await useAsyncData(props.type, () => queryCollection(props.type).all())
 
 // 選択されたタグを管理するリアクティブな変数
 const selectedTags = ref<string[]>([])
